@@ -1,0 +1,19 @@
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
+.iconfont {
+    margin-right: 10px;
+}
+.layui-icon {
+    margin: 0 10px 20px;
+}
+.userinfo .text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #009688;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+}

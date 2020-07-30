@@ -10,7 +10,7 @@ $(function () {
     // 自定义校验规则
     layui.form.verify({
         //数组第一项是匹配的正则，第二项是不满足正则的时候报错信息
-        pwd: [/^\s{6,12}$/, '密码不能有空格，并且是6到12位'],
+        pwd: [/^\S{6,12}$/, '密码不能有空格，并且是6到12位'],
         //密码和确认密码必须一致
         //value用户输入的值
         reqwd: function (value) {
@@ -39,7 +39,6 @@ $(function () {
     // 登录功能
     $('#login_form').on('submit', function (e) {
         e.preventDefault();
-        alert(1)
         $.ajax({
             method: 'post',
             url: '/api/login',
@@ -47,6 +46,7 @@ $(function () {
             success: function (res) {
                 console.log(res);
                 if (res.status != 0) return layer.msg(res.message);
+                layer.msg(res.message);
                 localStorage.setItem('token', res.token);
                 // 跳转到后台首页
                 location.href = '../../index.html';
